@@ -47,3 +47,7 @@ function showError(elementId, message) {
         errorElement.textContent = message;
     }
 }
+
+
+
+//AL FIN
