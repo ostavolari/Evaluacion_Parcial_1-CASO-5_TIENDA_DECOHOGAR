@@ -2,8 +2,8 @@
     --deco-dark:    #212529;
     --deco-gray:    #6c757d;
     --deco-light:   #f8f5f0;
-    --deco-accent:  #0d6efd; /* Azul estándar para enlaces y enfoques */
-    --deco-accent-hover: #0a58ca; /* Azul más oscuro para hover */
+    --deco-accent:  #0d6efd;
+    --deco-accent-hover: #0a58ca;
     --deco-border:  #e0dcd5;
     --deco-radius:  10px;
     --deco-shadow:  0 4px 12px rgba(0, 0, 0, .08);
@@ -85,7 +85,7 @@ a:hover {
     transition: var(--deco-transition);
 }
 .btn-dark:hover {
-    background-color: #343a40; /* Gris oscuro más claro */
+    background-color: #343a40;
     border-color: #343a40;
     transform: translateY(-1px);
     box-shadow: var(--deco-shadow);
@@ -118,7 +118,7 @@ a:hover {
 }
 .form-control:focus {
     border-color: var(--deco-accent);
-    box-shadow: 0 0 0 .2rem rgba(13, 110, 253, .18); /* Brillo azul */
+    box-shadow: 0 0 0 .2rem rgba(13, 110, 253, .18);
 }
 .form-text { font-size: .82rem; color: var(--deco-gray); }
 
@@ -154,15 +154,15 @@ a:hover {
 }
 .generos label:hover {
     border-color: var(--deco-dark);
-    background-color: #f8f9fa; /* Gris sutil */
+    background-color: #f8f9fa;
 }
 .generos input[type="checkbox"] {
-    accent-color: var(--deco-dark); /* Tick oscuro */
+    accent-color: var(--deco-dark);
     cursor: pointer;
 }
 .generos label:has(input:checked) {
     border-color: var(--deco-dark);
-    background-color: #e9ecef; /* Fondo gris claro al seleccionar */
+    background-color: #e9ecef;
     font-weight: 600;
 }
 
@@ -183,9 +183,9 @@ a:hover {
     gap: 1rem;
 }
 .address-item {
-    background-color: #f8f9fa; /* Gris muy claro en lugar del beige */
+    background-color: #f8f9fa;
     border: 1px solid var(--deco-border);
-    border-left: 4px solid var(--deco-dark); /* Borde oscuro elegante */
+    border-left: 4px solid var(--deco-dark);
     border-radius: var(--deco-radius);
     padding: 1rem;
     display: flex;
@@ -207,7 +207,7 @@ a:hover {
 .address-item select:focus {
     outline: none;
     border-color: var(--deco-accent);
-    box-shadow: 0 0 0 .15rem rgba(13, 110, 253, .2); /* Brillo azul */
+    box-shadow: 0 0 0 .15rem rgba(13, 110, 253, .2);
 }
 .address-item .btn-danger {
     align-self: flex-end;
@@ -261,15 +261,12 @@ footer {
 .hero-section {
     position: relative;
     min-height: 75vh;
-    /* CORREGIDO: La ruta es desde la carpeta donde está este CSS */
     background-image: url('img/decohogar.jpg');
     background-size: cover;
-    /* CORREGIDO: Así VS Code ya no marcará error */
     background-position: right center;
     background-repeat: no-repeat;
 }
 
-/* Capa de gradiente para que el texto se lea bien */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -277,26 +274,22 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Gradiente de blanco a transparente de izquierda a derecha */
     background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.7) 40%, rgba(255, 255, 255, 0) 80%);
     z-index: 1;
 }
 
-/* Asegura que el texto esté por encima del gradiente */
 .hero-content {
     position: relative;
     z-index: 2;
     padding: 2rem 0;
 }
 
-/* Ajustes responsivos para el Hero */
 @media (max-width: 991.98px) {
     .hero-section {
         min-height: 60vh;
         background-position: center;
     }
     .hero-section::before {
-        /* En móviles, oscurecemos más para que el texto resalte */
         background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
     }
 }

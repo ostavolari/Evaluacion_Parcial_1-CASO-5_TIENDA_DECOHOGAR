@@ -1,7 +1,5 @@
-
 //Identificador autoincremental para cada direccion
 let addressCount = 0; 
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('register-form');
@@ -125,7 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
 
 // inyecta un nuevo bloque HTML de dirección al contenedor, le pregunté a la IA para que lo inyectara como en el desafio de las mascotas
 function addAddress() {

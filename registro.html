@@ -4,165 +4,135 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DECOHOGAR - Registro</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-          rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/stylesheet.css">
 </head>
-
 <body class="d-flex flex-column min-vh-100">
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">DECOHOGAR</a>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="nav">
-                <div class="navbar-nav ms-auto">
-                    <a class="nav-link" href="productos.html">Productos</a>
-                    <a class="nav-link" href="nosotros.html">Nosotros</a>
-                    <a class="nav-link" href="blogs.html">Blogs</a>
-                    <a class="nav-link" href="contacto.html">Contacto</a>
-                    <a class="nav-link" href="login.html">Ingresar</a>
-                    <a class="nav-link" href="registro.html">Registrarse</a>
-                    <a class="nav-link" href="carrito.html">Carrito <span class="badge rounded-pill text-bg-light text-dark cart-count">0</span></a>
-                    <a class="nav-link" href="admin/index.html">Admin</a>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">DECOHOGAR</a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                        <a class="nav-link" href="blogs.html">Blogs</a>
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                        <a class="nav-link" href="login.html">Ingresar</a>
+                        <a class="nav-link" href="registro.html">Registrarse</a>
+                        <a class="nav-link" href="carrito.html">Carrito <span class="badge rounded-pill text-bg-light text-dark cart-count">0</span></a>
+                        <a class="nav-link" href="admin/index.html">Admin</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-</header>
-<main class="flex-grow-1">
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h2 class="text-center mb-4">
-                            Registro de usuario
-                        </h2>
-
-                        <form id="registroForm">
-
-                            <div class="mb-3">
-                                <label for="nombre" class="form-label">
-                                    Nombre completo
-                                </label>
-
-                                <input type="text"
-                                       class="form-control"
-                                       id="nombre"
-                                       required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="correo" class="form-label">
-                                    Correo
-                                </label>
-
-                                <input type="email"
-                                       class="form-control"
-                                       id="correo"
-                                       placeholder="usuario@duoc.cl"
-                                       required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="contrasena" class="form-label">
-                                    Contraseña
-                                </label>
-
-                                <input type="password"
-                                       class="form-control"
-                                       id="contrasena"
-                                       required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="confirmarContrasena" class="form-label">
-                                    Confirmar contraseña
-                                </label>
-
-                                <input type="password"
-                                       class="form-control"
-                                       id="confirmarContrasena"
-                                       required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">
-                                    ESTILOS DE PREFERENCIA
-                                </label>
-                                <div class="generos">
-                                    <label>
-                                        <input type="checkbox" name="genero" value="minimalista">
-                                        MINIMALISTA
-                                    </label>
-
-                                    <label>
-                                        <input type="checkbox" name="estilo" value="industrial">
-                                        INDUSTRIAL
-                                    </label>
-
-                                    <label>
-                                        <input type="checkbox" name="estilo" value="nordico">
-                                        NÓRDICO
-                                    </label>
-
-                                    <label>
-                                        <input type="checkbox" name="estilo" value="vintage">
-                                        VINTAGE
-                                    </label>
-
-                                    <label>
-                                        <input type="checkbox" name="estilo" value="rustico">
-                                        RÚSTICO
-                                    </label>
-
-                                    <label>
-                                        <input type="checkbox" name="estilo" value="moderno">
-                                        MODERNO
-                                    </label>
+        </nav>
+    </header>
+    <main class="flex-grow-1">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Registro de usuario</h2>
+                            <form id="registroForm">
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">Nombre completo</label>
+                                    <input type="text"
+                                           class="form-control"
+                                           id="nombre"
+                                           required>
                                 </div>
-
-                            </div>
-
-                            <div class="direcciones-header">
-                                <p>Direcciones de envío</p>
-                                <button type="button" id="btnAgregarDireccion" class="btn btn-outline-dark btn-sm">
-                                    + Agregar dirección
-                                </button>
-                            </div>
-
-                            <div id="direcciones"></div>
-
-                            <div class="d-grid">
-                                <button type="submit"
-                                        class="btn btn-dark"
-                                        id="btnRegistro">
-                                    REGISTRAR
-                                </button>
-                            </div>
-                        </form>
-
-                        <p class="text-center mt-3">
-                            ¿Ya tienes una cuenta?
-                            <a href="login.html">
-                                Inicia sesión aquí
-                            </a>
-                        </p>
+                                <div class="mb-3">
+                                    <label for="correo" class="form-label">Correo</label>
+                                    <input type="email"
+                                           class="form-control"
+                                           id="correo"
+                                           placeholder="usuario@duoc.cl"
+                                           required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contrasena" class="form-label">Contraseña</label>
+                                    <input type="password"
+                                           class="form-control"
+                                           id="contrasena"
+                                           required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmarContrasena" class="form-label">Confirmar contraseña</label>
+                                    <input type="password"
+                                           class="form-control"
+                                           id="confirmarContrasena"
+                                           required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">ESTILOS DE PREFERENCIA</label>
+                                    <div class="generos">
+                                        <label>
+                                            <input type="checkbox" name="genero" value="minimalista">
+                                            MINIMALISTA
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="estilo" value="industrial">
+                                            INDUSTRIAL
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="estilo" value="nordico">
+                                            NÓRDICO
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="estilo" value="vintage">
+                                            VINTAGE
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="estilo" value="rustico">
+                                            RÚSTICO
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="estilo" value="moderno">
+                                            MODERNO
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="direcciones-header">
+                                    <p>Direcciones de envío</p>
+                                    <button type="button" id="btnAgregarDireccion" class="btn btn-outline-dark btn-sm">
+                                        + Agregar dirección
+                                    </button>
+                                </div>
+                                <div id="direcciones"></div>
+                                <div class="d-grid">
+                                    <button type="submit"
+                                            class="btn btn-dark"
+                                            id="btnRegistro">
+                                        REGISTRAR
+                                    </button>
+                                </div>
+                            </form>
+                            <p class="text-center mt-3">¿Ya tienes una cuenta?
+                                <a href="login.html">Inicia sesión aquí</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </main>
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">© 2026 DECOHOGAR</p>
+    </footer>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toast" class="toast" role="alert">
+            <div class="d-flex">
+                <div class="toast-body"></div>
+                <button class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
     </div>
-</main>
-<footer class="bg-dark text-white text-center py-3">
-    <p class="mb-0">
-        © 2026 DECOHOGAR
-    </p>
-</footer>
-<script src="assets/registro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/registro.js"></script>
 </body>
 </html>
 
