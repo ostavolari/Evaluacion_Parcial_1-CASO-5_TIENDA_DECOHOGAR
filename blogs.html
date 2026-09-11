@@ -1,10 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>DECOHOGAR - Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
-$END$
+<body class="d-flex flex-column min-vh-100">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">DECOHOGAR</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.html">Inicio</a>
+                <a class="nav-link" href="productos.html">Productos</a>
+                <a class="nav-link" href="nosotros.html">Nosotros</a>
+                <a class="nav-link" href="blogs.html">Blogs</a>
+                <a class="nav-link" href="contacto.html">Contacto</a>
+                <a class="nav-link" href="login.html">Ingresar</a>
+                <a class="nav-link" href="registro.html">Registrarse</a>
+                <a class="nav-link" href="carrito.html">Carrito
+                    <span class="badge rounded-pill text-bg-light text-dark cart-count">0</span>
+                </a>
+                <a class="nav-link" href="admin/index.html">Admin</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<main class="flex-grow-1">
+    <section class="container py-5">
+        <h1>Blog DECOHOGAR</h1>
+        <p class="text-muted">Ideas y consejos para inspirar tus espacios.</p>
+        <div class="row g-4 mt-2">
+            <div class="col-md-6">
+                <article class="card h-100 shadow-sm">
+                    <img class="card-img-top blog-img" src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=80" alt="">
+                    <div class="card-body">
+                        <h2 class="h4">Cómo crear un ambiente minimalista</h2>
+                        <p>Menos elementos, más intención: descubre principios simples para ordenar y
+                            decorar.</p>
+                        <a href="blog-minimalista.html" class="btn btn-dark">Leer artículo</a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6">
+                <article class="card h-100 shadow-sm">
+                    <img class="card-img-top blog-img" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" alt="">
+                    <div class="card-body">
+                        <h2 class="h4">Textiles que transforman un espacio</h2>
+                        <p>Combina mantas, cojines y texturas para renovar tu living sin grandes
+                            cambios.</p>
+                        <a href="blog-textiles.html" class="btn btn-dark">Leer artículo</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="bg-secondary text-white text-center py-3">
+    <p class="mb-0">
+        © 2026 DECOHOGAR
+    </p>
+</footer>
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="toast" class="toast" role="alert">
+        <div class="d-flex">
+            <div class="toast-body">
+
+            </div>
+            <button class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast">
+
+            </button>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+
+</script><script src="assets/app.js"></script>
 </body>
 </html>
