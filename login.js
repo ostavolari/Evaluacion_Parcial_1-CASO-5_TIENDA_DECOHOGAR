@@ -1,6 +1,3 @@
-// ===================================
-// ELEMENTOS DEL DOM
-// ===================================
 
 const loginForm = document.querySelector("#loginForm");
 const loginEmail = document.querySelector("#loginEmail");
@@ -8,9 +5,8 @@ const loginPassword = document.querySelector("#loginPassword");
 const errorLoginEmail = document.querySelector("#errorLoginEmail");
 const errorLoginPassword = document.querySelector("#errorLoginPassword");
 
-// ===================================
+
 // VALIDAR EMAIL
-// ===================================
 
 function validarLoginEmail() {
   const regexEmail = /^[a-zA-Z0-9._%+-]+@duoc\.cl$/;
@@ -25,10 +21,7 @@ function validarLoginEmail() {
   }
   return true;
 }
-
-// ===================================
 // VALIDAR PASSWORD
-// ===================================
 
 function validarLoginPassword() {
   if (!loginPassword.value) {
@@ -38,9 +31,7 @@ function validarLoginPassword() {
   return true;
 }
 
-// ===================================
 // LIMPIAR ERRORES
-// ===================================
 
 function limpiarErrores() {
   const mensajes = document.querySelectorAll(".error-msg");
@@ -49,9 +40,10 @@ function limpiarErrores() {
   });
 }
 
-// ===================================
 // BUSCAR USUARIO
-// ===================================
+
+
+
 
 function buscarUsuario(email, password) {
   const usuarios = JSON.parse(localStorage.getItem("decoUsers")) || [];
@@ -62,10 +54,8 @@ function buscarUsuario(email, password) {
 
   return encontrado;
 }
-
-// ===================================
 // INICIAR SESIÓN
-// ===================================
+
 
 function iniciarSesion() {
   const usuario = buscarUsuario(loginEmail.value, loginPassword.value);
@@ -74,7 +64,7 @@ function iniciarSesion() {
     alert(`¡Bienvenido de nuevo, ${usuario.nombre}!`);
     window.location.href = "registro.html";
   } else {
-    // Mensaje contextual: si el correo existe pero la contraseña no, se indica.
+    // si el correo existe pero la contraseña no, avisa
     const usuarios = JSON.parse(localStorage.getItem("decoUsers")) || [];
     const existeEmail = usuarios.find(function (u) {
       return u.email === loginEmail.value;
@@ -88,9 +78,8 @@ function iniciarSesion() {
   }
 }
 
-// ===================================
+
 // EVENTOS
-// ===================================
 
 loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
