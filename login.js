@@ -1,94 +1,49 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById('login-form');
 
-const loginForm = document.querySelector("#loginForm");
-const loginEmail = document.querySelector("#loginEmail");
-const loginPassword = document.querySelector("#loginPassword");
-const errorLoginEmail = document.querySelector("#errorLoginEmail");
-const errorLoginPassword = document.querySelector("#errorLoginPassword");
+    if (!loginForm) return;
 
+    loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        let isLoginValid = true;
 
-// VALIDAR EMAIL
+        // Limpiar errores previos en pantalla
+        document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
 
-function validarLoginEmail() {
-  const regexEmail = /^[a-zA-Z0-9._%+-]+@duoc\.cl$/;
+        const email = document.getElementById('login-email').value.trim();
+        const pass = document.getElementById('login-password').value;
 
-  if (!loginEmail.value.trim()) {
-    errorLoginEmail.textContent = "El correo es obligatorio.";
-    return false;
-  }
-  if (!regexEmail.test(loginEmail.value)) {
-    errorLoginEmail.textContent = "El correo debe terminar exclusivamente en @duoc.cl.";
-    return false;
-  }
-  return true;
-}
-// VALIDAR PASSWORD
+        // Validar correo 
+        if (email === '') {
+            showError('err-login-email', 'Por favor, ingrese su correo electrónico.');
+            isLoginValid = false;
+        } else if (!email.includes('@')) {
+            showError('err-login-email', 'El formato del correo electrónico no es válido.');
+            isLoginValid = false;
+        } else if (!email.endsWith('@duoc.cl')) {
+            showError('err-login-email', 'El correo debe terminar exclusivamente en @duoc.cl.');
+            isLoginValid = false;
+        }
 
-function validarLoginPassword() {
-  if (!loginPassword.value) {
-    errorLoginPassword.textContent = "La contraseña es obligatoria.";
-    return false;
-  }
-  return true;
-}
+        //Validar contraseña obligatoria
+        if (pass === '') {
+            showError('err-login-password', 'Por favor, ingrese su contraseña.');
+            isLoginValid = false;
+        }
 
-// LIMPIAR ERRORES
-
-function limpiarErrores() {
-  const mensajes = document.querySelectorAll(".error-msg");
-  mensajes.forEach(function (el) {
-    el.textContent = "";
-  });
-}
-
-// BUSCAR USUARIO
-
-
-
-
-function buscarUsuario(email, password) {
-  const usuarios = JSON.parse(localStorage.getItem("decoUsers")) || [];
-
-  const encontrado = usuarios.find(function (u) {
-    return u.email === email && u.password === password;
-  });
-
-  return encontrado;
-}
-// INICIAR SESIÓN
-
-
-function iniciarSesion() {
-  const usuario = buscarUsuario(loginEmail.value, loginPassword.value);
-
-  if (usuario) {
-    alert(`¡Bienvenido de nuevo, ${usuario.nombre}!`);
-    window.location.href = "registro.html";
-  } else {
-    // si el correo existe pero la contraseña no, avisa
-    const usuarios = JSON.parse(localStorage.getItem("decoUsers")) || [];
-    const existeEmail = usuarios.find(function (u) {
-      return u.email === loginEmail.value;
+        // 3. Resultado de la validación[cite: 2]
+        if (isLoginValid) {
+            alert('¡Inicio de sesión exitoso! Redirigiendo al catálogo de DecoHogar...');
+            loginForm.reset();
+        }
     });
-
-    if (existeEmail) {
-      errorLoginPassword.textContent = "Contraseña incorrecta. Verifique e intente nuevamente.";
-    } else {
-      errorLoginEmail.textContent = "Usuario no registrado. Verifique el correo o regístrese.";
-    }
-  }
-}
-
-
-// EVENTOS
-
-loginForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-  limpiarErrores();
-
-  const v1 = validarLoginEmail();
-  const v2 = validarLoginPassword();
-
-  if (v1 && v2) {
-    iniciarSesion();
-  }
 });
+
+
+// Muestra el mensaje de error en la etiqueta q corresponde
+function showError(elementId, message) {
+    const errorElement = document.getElementById(elementId);
+    if (errorElement) {
+        errorElement.textContent = message;
+    }
+}
