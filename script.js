@@ -1,12 +1,8 @@
-// ===================================
-// ESTADO
-// ===================================
 
 let usuarios = [];
 
-// ===================================
 // ELEMENTOS DEL DOM
-// ===================================
+
 
 const registroForm = document.querySelector("#registroForm");
 const agregarDireccionBtn = document.querySelector("#agregarDireccionBtn");
@@ -24,24 +20,20 @@ const errorConfirmPassword = document.querySelector("#errorConfirmPassword");
 const errorEstilos = document.querySelector("#errorEstilos");
 const errorDirecciones = document.querySelector("#errorDirecciones");
 
-// ===================================
 // DATOS
-// ===================================
+
 
 const comunas = ["Santiago", "Maipú", "Providencia", "Las Condes", "Ñuñoa"];
 
-// ===================================
 // CARGAR USUARIOS DESDE localStorage
-// ===================================
 
 function cargarUsuarios() {
   const guardados = JSON.parse(localStorage.getItem("decoUsers")) || [];
   usuarios = guardados;
 }
 
-// ===================================
+
 // AGREGAR DIRECCIÓN
-// ===================================
 
 function agregarDireccion() {
   const div = document.createElement("div");
@@ -79,9 +71,8 @@ function agregarDireccion() {
   direccionesContainer.appendChild(div);
 }
 
-// ===================================
 // VALIDAR NOMBRE
-// ===================================
+
 
 function validarNombre() {
   const regexNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
@@ -101,9 +92,8 @@ function validarNombre() {
   return true;
 }
 
-// ===================================
+
 // VALIDAR EMAIL
-// ===================================
 
 function validarEmail() {
   const regexEmail = /^[a-zA-Z0-9._%+-]+@duoc\.cl$/;
@@ -128,9 +118,8 @@ function validarEmail() {
   return true;
 }
 
-// ===================================
+
 // VALIDAR CONTRASEÑA
-// ===================================
 
 function validarPassword() {
   const regexPass = /^(?=.*[A-Z])(?=.*\d)(?=.*[$%&/*])[A-Za-z\d$%&/*]{10,}$/;
@@ -146,9 +135,8 @@ function validarPassword() {
   return true;
 }
 
-// ===================================
 // VALIDAR CONFIRMACIÓN
-// ===================================
+
 
 function validarConfirmPassword() {
   if (!confirmPasswordInput.value) {
@@ -162,9 +150,8 @@ function validarConfirmPassword() {
   return true;
 }
 
-// ===================================
 // VALIDAR ESTILOS
-// ===================================
+
 
 function validarEstilos() {
   const estilos = document.querySelectorAll("input[name='estilos']:checked");
@@ -176,9 +163,9 @@ function validarEstilos() {
   return true;
 }
 
-// ===================================
+
 // VALIDAR DIRECCIONES
-// ===================================
+
 
 function validarDirecciones() {
   const itemsDireccion = document.querySelectorAll(".direccion-item");
@@ -224,9 +211,8 @@ function validarDirecciones() {
   return valido;
 }
 
-// ===================================
+
 // LIMPIAR ERRORES
-// ===================================
 
 function limpiarErrores() {
   const mensajes = document.querySelectorAll(".error-msg");
@@ -235,9 +221,9 @@ function limpiarErrores() {
   });
 }
 
-// ===================================
+
 // GUARDAR USUARIO
-// ===================================
+
 
 function guardarUsuario() {
   const estilos = document.querySelectorAll("input[name='estilos']:checked");
@@ -258,9 +244,7 @@ function guardarUsuario() {
   window.location.href = "login.html";
 }
 
-// ===================================
 // EVENTOS
-// ===================================
 
 agregarDireccionBtn.addEventListener("click", agregarDireccion);
 
