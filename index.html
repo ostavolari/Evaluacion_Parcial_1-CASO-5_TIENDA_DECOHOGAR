@@ -12,74 +12,48 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                DECOHOGAR
-            </a>
-
-            <div class="navbar-nav">
-
-                <a class="nav-link" href="index.html">
-                    Inicio
-                </a>
-
-                <a class="nav-link" href="productos.html">
-                    Productos
-                </a>
-
-                <a class="nav-link" href="nosotros.html">
-                    Nosotros
-                </a>
-
-                <a class="nav-link" href="blogs.html">
-                    Blogs
-                </a>
-
-                <a class="nav-link" href="contacto.html">
-                    Contacto
-                </a>
-
-                <a class="nav-link" href="login.html">
-                    Iniciar sesión
-                </a>
-
-                <a class="nav-link" href="registro.html">
-                    Registrarse
-                </a>
-
-                <a class="nav-link" href="carrito.html">
-                    Carrito
-                </a>
+            <a class="navbar-brand" href="index.html">DECOHOGAR</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="productos.html">Productos</a>
+                    <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    <a class="nav-link" href="blogs.html">Blogs</a>
+                    <a class="nav-link" href="contacto.html">Contacto</a>
+                    <a class="nav-link" href="login.html">Ingresar</a>
+                    <a class="nav-link" href="registro.html">Registrarse</a>
+                    <a class="nav-link" href="carrito.html">Carrito <span class="badge rounded-pill text-bg-light text-dark cart-count">0</span></a>
+                    <a class="nav-link" href="admin/index.html">Admin</a>
+                </div>
             </div>
         </div>
     </nav>
 </header>
+
 <main class="flex-grow-1">
-    <section class="container mt-5">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <h1>
-                    Bienvenidos a DECOHOGAR
-                </h1>
-
-                <p>
-                    Encuentra productos para transformar y decorar
-                    tus espacios de acuerdo con tu estilo.
-                </p>
-
-                <a href="productos.html" class="btn btn-dark">
-                    Ver productos
-                </a>
-            </div>
-            <div class="col-md-6">
-
-                <img src="assets/img/decohogar.jpg"
-                     class="img-fluid"
-                     alt="Productos y decoración de DECOHOGAR">
+    <section class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="display-4 fw-bold mb-3">
+                        Bienvenidos a DECOHOGAR
+                    </h1>
+                    <p class="lead mb-4">
+                        Encuentra productos para transformar y decorar
+                        tus espacios de acuerdo con tu estilo.
+                    </p>
+                    <a href="productos.html" class="btn btn-dark btn-lg">
+                        Ver productos →
+                    </a>
+                </div>
             </div>
         </div>
     </section>
+
     <section class="container mt-5">
         <h2 class="text-center mb-4">
             Productos destacados
@@ -105,7 +79,7 @@
         </a>
     </section>
 </main>
-<footer class="bg-secondary text-white text-center py-3">
+<footer class="bg-dark text-white text-center py-3">
     <p class="mb-0">
         © 2026 DECOHOGAR
     </p>
