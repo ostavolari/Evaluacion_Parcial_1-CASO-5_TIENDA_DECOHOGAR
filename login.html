@@ -40,24 +40,14 @@
                                 <h2>Inicio sesión</h2>
                                 <form id="loginForm">
                                     <div class="mb-3">
-                                        <label for="Correo"
-                                               class="form-label">
-                                            Correo
-                                        </label>
-                                        <input type="text"
-                                               class="form-control"
-                                               id="Correo"
-                                               placeholder="usuario@duocuc.cl"
-                                               required>
+                                        <label for="Correo" class="form-label">Correo</label>
+                                        <input type="text" class="form-control" id="Correo" placeholder="usuario@duoc.cl" required>
+                                        <div class="error-message" id="err-login-email"></div>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="Contrasena"
-                                               class="form-label">
-                                            Contraseña
-                                        </label>
-                                        <input type="password"
-                                               class="form-control"
-                                               id="Contrasena">
+                                        <label for="Contrasena" class="form-label">Contraseña</label>
+                                        <input type="password" class="form-control" id="Contrasena" required>
+                                        <div class="error-message" id="err-login-password"></div>
                                         <div class="d-grid mt-3">
                                             <button type="submit" class="btn btn-dark w-100">Iniciar Sesión</button>
                                         </div>
@@ -85,6 +75,7 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/login.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/login.js"></script>
 </body>
 </html>
