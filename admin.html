@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>DECOHOGAR - Panel Administrador</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/stylesheet.css">
+</head>
+<body>
+<div class="admin-layout">
+    <aside class="admin-sidebar">
+        <h1 class="admin-logo">DECOHOGAR</h1>
+        <nav>
+            <a href="#" class="admin-link active" data-section="dashboard">Dashboard</a>
+            <a href="#" class="admin-link" data-section="productos">Productos</a>
+            <a href="#" class="admin-link" data-section="usuarios">Usuarios</a>
+            <a href="index.html" class="admin-link admin-link-out">← Volver a la tienda</a>
+        </nav>
+    </aside>
+    <main class="admin-main">
+        <section id="sec-dashboard" class="admin-section">
+            <h2>¡Hola, Administrador!</h2>
+            <p class="text-muted">Panel de gestión de DECOHOGAR</p>
+
+            <div class="row g-3 mt-3">
+                <div class="col-md-6">
+                    <div class="admin-card">
+                        <h3>Total Productos</h3>
+                        <p class="display-6 mb-0" id="stat-productos">0</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="admin-card">
+                        <h3>Total Usuarios</h3>
+                        <p class="display-6 mb-0" id="stat-usuarios">0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="sec-productos" class="admin-section d-none">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2>Productos</h2>
+                <button class="btn btn-dark" id="btnNuevoProducto">+ Nuevo producto</button>
+            </div>
+
+            <form id="formProducto" class="admin-form d-none mb-4" novalidate>
+                <input type="hidden" id="prod-id">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Código *</label>
+                        <input type="text" class="form-control" id="prod-codigo">
+                        <div class="error-message" id="err-prod-codigo"></div>
+                    </div>
+                    <div class="col-md-8">
+                        <label class="form-label">Nombre *</label>
+                        <input type="text" class="form-control" id="prod-nombre" maxlength="100">
+                        <div class="error-message" id="err-prod-nombre"></div>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Descripción</label>
+                        <textarea class="form-control" id="prod-descripcion" rows="2" maxlength="500"></textarea>
+                        <div class="error-message" id="err-prod-descripcion"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Precio *</label>
+                        <input type="number" class="form-control" id="prod-precio" min="0" step="0.01">
+                        <div class="error-message" id="err-prod-precio"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Stock *</label>
+                        <input type="number" class="form-control" id="prod-stock" min="0" step="1">
+                        <div class="error-message" id="err-prod-stock"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Categoría *</label>
+                        <select class="form-select" id="prod-categoria">
+                            <option value="">Seleccione...</option>
+                            <option>Muebles</option>
+                            <option>Iluminación</option>
+                            <option>Textiles</option>
+                            <option>Decoración</option>
+                        </select>
+                        <div class="error-message" id="err-prod-categoria"></div>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">URL de imagen (opcional)</label>
+                        <input type="text" class="form-control" id="prod-imagen">
+                    </div>
+                </div>
+                <div class="mt-3 d-flex gap-2">
+                    <button type="submit" class="btn btn-dark">Guardar</button>
+                    <button type="button" class="btn btn-outline-dark" id="btnCancelarProducto">Cancelar</button>
+                </div>
+            </form>
+            <div class="table-responsive">
+                <table class="table table-striped align-middle bg-white">
+                    <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th class="text-end">Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tablaProductos"></tbody>
+                </table>
+            </div>
+        </section>
+        <section id="sec-usuarios" class="admin-section d-none">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2>Usuarios</h2>
+                <button class="btn btn-dark" id="btnNuevoUsuario">+ Nuevo usuario</button>
+            </div>
+
+            <form id="formUsuario" class="admin-form d-none mb-4" novalidate>
+                <input type="hidden" id="user-id">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label">RUN * (sin puntos ni guión)</label>
+                        <input type="text" class="form-control" id="user-run" maxlength="9">
+                        <div class="error-message" id="err-user-run"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Nombre *</label>
+                        <input type="text" class="form-control" id="user-nombre" maxlength="50">
+                        <div class="error-message" id="err-user-nombre"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Apellidos *</label>
+                        <input type="text" class="form-control" id="user-apellidos" maxlength="100">
+                        <div class="error-message" id="err-user-apellidos"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Correo *</label>
+                        <input type="email" class="form-control" id="user-correo" maxlength="100">
+                        <div class="error-message" id="err-user-correo"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Tipo de usuario *</label>
+                        <select class="form-select" id="user-tipo">
+                            <option value="Administrador">Administrador</option>
+                            <option value="Vendedor">Vendedor</option>
+                            <option value="Cliente" selected>Cliente</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Región *</label>
+                        <select class="form-select" id="user-region">
+                            <option value="">Seleccione...</option>
+                        </select>
+                        <div class="error-message" id="err-user-region"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Comuna *</label>
+                        <select class="form-select" id="user-comuna">
+                            <option value="">Seleccione...</option>
+                        </select>
+                        <div class="error-message" id="err-user-comuna"></div>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Dirección *</label>
+                        <input type="text" class="form-control" id="user-direccion" maxlength="300">
+                        <div class="error-message" id="err-user-direccion"></div>
+                    </div>
+                </div>
+                <div class="mt-3 d-flex gap-2">
+                    <button type="submit" class="btn btn-dark">Guardar</button>
+                    <button type="button" class="btn btn-outline-dark" id="btnCancelarUsuario">Cancelar</button>
+                </div>
+            </form>
+            <div class="table-responsive">
+                <table class="table table-striped align-middle bg-white">
+                    <thead>
+                    <tr>
+                        <th>RUN</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Tipo</th>
+                        <th>Comuna</th>
+                        <th class="text-end">Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tablaUsuarios"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/productos.js"></script>
+</body>
+</html>
